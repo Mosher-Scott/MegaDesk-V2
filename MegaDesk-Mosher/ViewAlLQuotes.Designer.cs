@@ -28,9 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CloseFormButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.submitDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quoteTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // CloseFormButton
@@ -46,12 +53,47 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientFirstNameDataGridViewTextBoxColumn,
+            this.clientLastNameDataGridViewTextBoxColumn,
+            this.submitDateDataGridViewTextBoxColumn,
+            this.quoteTotalDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.deskQuoteBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 42);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(690, 312);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // deskQuoteBindingSource
+            // 
+            this.deskQuoteBindingSource.DataSource = typeof(MegaDesk_Mosher.DeskQuote);
+            // 
+            // clientFirstNameDataGridViewTextBoxColumn
+            // 
+            this.clientFirstNameDataGridViewTextBoxColumn.DataPropertyName = "clientFirstName";
+            this.clientFirstNameDataGridViewTextBoxColumn.HeaderText = "clientFirstName";
+            this.clientFirstNameDataGridViewTextBoxColumn.Name = "clientFirstNameDataGridViewTextBoxColumn";
+            // 
+            // clientLastNameDataGridViewTextBoxColumn
+            // 
+            this.clientLastNameDataGridViewTextBoxColumn.DataPropertyName = "clientLastName";
+            this.clientLastNameDataGridViewTextBoxColumn.HeaderText = "clientLastName";
+            this.clientLastNameDataGridViewTextBoxColumn.Name = "clientLastNameDataGridViewTextBoxColumn";
+            // 
+            // submitDateDataGridViewTextBoxColumn
+            // 
+            this.submitDateDataGridViewTextBoxColumn.DataPropertyName = "submitDate";
+            this.submitDateDataGridViewTextBoxColumn.HeaderText = "submitDate";
+            this.submitDateDataGridViewTextBoxColumn.Name = "submitDateDataGridViewTextBoxColumn";
+            // 
+            // quoteTotalDataGridViewTextBoxColumn
+            // 
+            this.quoteTotalDataGridViewTextBoxColumn.DataPropertyName = "quoteTotal";
+            this.quoteTotalDataGridViewTextBoxColumn.HeaderText = "quoteTotal";
+            this.quoteTotalDataGridViewTextBoxColumn.Name = "quoteTotalDataGridViewTextBoxColumn";
             // 
             // ViewAllQuotes
             // 
@@ -67,6 +109,7 @@
             this.Text = "View All Quotes";
             this.Load += new System.EventHandler(this.ViewAllQuotes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -75,5 +118,10 @@
 
         private System.Windows.Forms.Button CloseFormButton;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientFirstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientLastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn submitDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quoteTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource deskQuoteBindingSource;
     }
 }
