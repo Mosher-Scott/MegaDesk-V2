@@ -29,8 +29,11 @@ namespace MegaDesk_Mosher
 
         public DisplayQuoteInfo(string firstName, string lastName, double width, double depth, int drawers, string material, int rushOrderInfo)
         {
+
             InitializeComponent();
 
+            quoteFirstName = firstName;
+            quoteLastName = lastName;
             quoteWidth = width;
             quoteDepth = depth;
             quoteDrawers = drawers;
@@ -93,6 +96,7 @@ namespace MegaDesk_Mosher
         // Button for saving the quote to a JSON file
         private void SaveQuoteButton_Click(object sender, EventArgs e)
         {
+            // test
             DateTime currentDate = DateTime.Now;
 
             // Create a quote object

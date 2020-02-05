@@ -33,6 +33,7 @@ namespace MegaDesk_Mosher
         // Constructor with values
         public DeskQuote(string quoteFirstName, string quoteLastName, string quoteDate, double deskQuoteTotal, Desk quoteDesk)
         {
+
             clientFirstName = quoteFirstName;
             clientLastName = quoteLastName;
             submitDate = quoteDate;
