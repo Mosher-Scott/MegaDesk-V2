@@ -71,10 +71,17 @@ namespace MegaDesk_Mosher
 
         //Get Rush Order
         //TODO: figure out file
+
+        //This method will do my validation
+
+
+        
+
         public int[,] GetRushOrder()
         {
             try
             {
+
                 string path = @"c:..\..\rushOrderPrices.txt";
                 string[] orderPrices = File.ReadAllLines(path);
                 int[,] rushOrderGrid = new int[3, 3];
@@ -89,21 +96,20 @@ namespace MegaDesk_Mosher
                     {
                         int output = int.Parse(orderPrices[x]);
                         rushOrderGrid[i, j] = output;
-                        //MessageBox.Show("Test:" + i + ", " + j + " " + rushOrderGrid[i,j]);
+                        //MessageBox.Show("Test:" + i + ", " + j + " " + rushOrderGrid[i, j]);
                         x++;
                     }
 
                 }
                 return rushOrderGrid;
             }
-
-            catch (FileNotFoundException)
+            catch (FileNotFoundException e)
             {
-
-                MessageBox.Show("Error. File containing rush order prices not found.");
-                throw;
+                MessageBox.Show("Error. File containing rush order prices not found. Invalid quote.");
+                Console.WriteLine(e);
             }
-
+            int[,] rushOrderGridTest = new int[3, 3];
+            return rushOrderGridTest;
         }
 
     }

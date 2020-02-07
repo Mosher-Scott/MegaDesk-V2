@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -165,11 +166,30 @@ namespace MegaDesk_Mosher
             DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
 
             // Now go back to the View Quote form
-            viewDisplayQuoteForm.Tag = this;
-            viewDisplayQuoteForm.Show(this);
+            //Validate that rush order list is accessible
+            string path = @"C:../../rushOrderPrices.txt";
+            if (File.Exists(path)) 
+            {
+                try
+                {
+                    //Lanch Add Quote Form
+                    viewDisplayQuoteForm.Tag = this;
+                    viewDisplayQuoteForm.Show(this);
 
-            // Now close this window
-            Hide();
+                    // Now close this window
+                    Hide();
+                }
+                catch(Exception ex)
+                {
+                  MessageBox.Show("Cannot process quote. Error.");
+                  Console.WriteLine(ex.Message);
+                        }
+            }
+            else
+            {
+                MessageBox.Show("Price list could not be found.");
+            }
+            
 
         }
 
@@ -301,6 +321,8 @@ namespace MegaDesk_Mosher
 
             return valid;
         }
+
+        
 
         //private void validateRushoptionInput(object sender, CancelEventArgs e)
         //{
