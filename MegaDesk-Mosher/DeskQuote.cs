@@ -75,14 +75,15 @@ namespace MegaDesk_Mosher
         //This method will do my validation
 
 
-        
+        public string path = @"rushOrderPrices.txt";
 
         public int[,] GetRushOrder()
         {
+            
             try
             {
 
-                string path = @"c:..\..\rushOrderPrices.txt";
+                
                 string[] orderPrices = File.ReadAllLines(path);
                 int[,] rushOrderGrid = new int[3, 3];
 

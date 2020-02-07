@@ -167,9 +167,11 @@ namespace MegaDesk_Mosher
 
             // Now go back to the View Quote form
             //Validate that rush order list is accessible
-            string path = @"C:../../rushOrderPrices.txt";
+            string path = @"rushOrderPrices.txt";
+
             if (File.Exists(path)) 
             {
+           
                 try
                 {
                     //Lanch Add Quote Form
