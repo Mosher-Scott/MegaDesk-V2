@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.components = new System.ComponentModel.Container();
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddQuote));
-
             this.CloseFormButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.matRequired = new System.Windows.Forms.Label();
@@ -71,12 +68,9 @@
             // 
             // groupBox1
             // 
-
+            this.groupBox1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox1.Controls.Add(this.matRequired);
             this.groupBox1.Controls.Add(this.materialBox);
-
-            this.groupBox1.BackColor = System.Drawing.Color.LightSteelBlue;
-
             this.groupBox1.Controls.Add(this.LastNameInputBox);
             this.groupBox1.Controls.Add(this.CustomerLastNameLabel);
             this.groupBox1.Controls.Add(this.RushRadioSeven);
@@ -124,7 +118,7 @@
             this.materialBox.Location = new System.Drawing.Point(180, 175);
             this.materialBox.Name = "materialBox";
             this.materialBox.Size = new System.Drawing.Size(121, 29);
-            this.materialBox.TabIndex = 34;
+            this.materialBox.TabIndex = 6;
             this.materialBox.SelectedIndexChanged += new System.EventHandler(this.materialBox_SelectedIndexChanged);
             // 
             // LastNameInputBox
