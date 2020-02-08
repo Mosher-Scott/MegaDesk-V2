@@ -35,7 +35,7 @@ namespace MegaDesk_Mosher
 
             #endregion
 
-            MainMenu viewMainMenu = (MainMenu)Tag;
+            MainMenu viewMainMenu =  new MainMenu();
             viewMainMenu.Show();
 
             // Now close this window
