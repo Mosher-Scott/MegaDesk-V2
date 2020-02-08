@@ -21,8 +21,8 @@ namespace MegaDesk_Mosher
         //Adding Additional Fields for Material Search
         public string Material { get; set; }
 
-        public const string SAVEDQUOTEFILE = "savedQuotes.json";  // Since this won't change
-        public const string RUSHORDERPRICEFILE = "rushOrderPrices.txt";
+        public const string SAVEDQUOTEFILE = @"ProgramResources\savedQuotes.json";  // Since this won't change
+        public const string RUSHORDERPRICEFILE = @"ProgramResources\rushOrderPrices.txt";
 
         // Create an empty desk object to be used
         public Desk userDesk;
@@ -30,11 +30,6 @@ namespace MegaDesk_Mosher
         // Create an empty list to hold all of the DeskQuotes
         public static List<DeskQuote> listOfQuotes = new List<DeskQuote>();
         public static List<DeskQuote> MaterialQuotes = new List<DeskQuote>();
-        private string fName;
-        private string lName;
-        private string qTotal;
-        private string qMaterial;
-        private string sDate;
 
         // Default constructor
         public DeskQuote() { }

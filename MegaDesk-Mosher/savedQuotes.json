@@ -1,0 +1,44 @@
+[
+  {
+    "userDesk": {
+      "deskWidth": 35.0,
+      "deskDepth": 48.0,
+      "numDrawers": 5,
+      "surfaceMaterial": "Oak",
+      "rushOption": 3
+    },
+    "clientFirstName": "Scott",
+    "clientLastName": "Mosher",
+    "submitDate": "02/07/2020 17:43 PM",
+    "quoteTotal": 1400.0,
+    "Material": "Oak"
+  },
+  {
+    "userDesk": {
+      "deskWidth": 30.0,
+      "deskDepth": 30.0,
+      "numDrawers": 6,
+      "surfaceMaterial": "Oak",
+      "rushOption": 3
+    },
+    "clientFirstName": "Rachel",
+    "clientLastName": "Bichsel",
+    "submitDate": "02/08/2020 8:07 AM",
+    "quoteTotal": 760.0,
+    "Material": "Veneer"
+  },
+  {
+    "userDesk": {
+      "deskWidth": 35.0,
+      "deskDepth": 41.0,
+      "numDrawers": 6,
+      "surfaceMaterial": "Pine",
+      "rushOption": 5
+    },
+    "clientFirstName": "Trevor",
+    "clientLastName": "Schulz",
+    "submitDate": "02/08/2020 8:55 AM",
+    "quoteTotal": 1035.0,
+    "Material": "Pine"
+  }
+]
