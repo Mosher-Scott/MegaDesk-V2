@@ -189,7 +189,6 @@
             // NumberOfDrawersInputBox
             // 
             this.NumberOfDrawersInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.NumberOfDrawersInputBox.Location = new System.Drawing.Point(196, 146);
             this.NumberOfDrawersInputBox.Name = "NumberOfDrawersInputBox";
             this.NumberOfDrawersInputBox.Size = new System.Drawing.Size(54, 23);
@@ -210,7 +209,6 @@
             // DeskDepthtInputBox
             // 
             this.DeskDepthtInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.DeskDepthtInputBox.Location = new System.Drawing.Point(196, 117);
             this.DeskDepthtInputBox.Name = "DeskDepthtInputBox";
             this.DeskDepthtInputBox.Size = new System.Drawing.Size(54, 23);
@@ -232,7 +230,6 @@
             // DeskWidthInputBox
             // 
             this.DeskWidthInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.DeskWidthInputBox.Location = new System.Drawing.Point(196, 88);
             this.DeskWidthInputBox.Name = "DeskWidthInputBox";
             this.DeskWidthInputBox.Size = new System.Drawing.Size(54, 23);
@@ -290,6 +287,7 @@
             this.Controls.Add(this.GenerateQuoteButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CloseFormButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddQuote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddQuote";
