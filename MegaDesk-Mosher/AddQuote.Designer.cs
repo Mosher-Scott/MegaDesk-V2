@@ -189,7 +189,8 @@
             // NumberOfDrawersInputBox
             // 
             this.NumberOfDrawersInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumberOfDrawersInputBox.Location = new System.Drawing.Point(244, 157);
+
+            this.NumberOfDrawersInputBox.Location = new System.Drawing.Point(196, 146);
             this.NumberOfDrawersInputBox.Name = "NumberOfDrawersInputBox";
             this.NumberOfDrawersInputBox.Size = new System.Drawing.Size(54, 23);
             this.NumberOfDrawersInputBox.TabIndex = 5;
@@ -209,7 +210,8 @@
             // DeskDepthtInputBox
             // 
             this.DeskDepthtInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeskDepthtInputBox.Location = new System.Drawing.Point(244, 126);
+
+            this.DeskDepthtInputBox.Location = new System.Drawing.Point(196, 117);
             this.DeskDepthtInputBox.Name = "DeskDepthtInputBox";
             this.DeskDepthtInputBox.Size = new System.Drawing.Size(54, 23);
             this.DeskDepthtInputBox.TabIndex = 4;
@@ -230,7 +232,8 @@
             // DeskWidthInputBox
             // 
             this.DeskWidthInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeskWidthInputBox.Location = new System.Drawing.Point(244, 95);
+
+            this.DeskWidthInputBox.Location = new System.Drawing.Point(196, 88);
             this.DeskWidthInputBox.Name = "DeskWidthInputBox";
             this.DeskWidthInputBox.Size = new System.Drawing.Size(54, 23);
             this.DeskWidthInputBox.TabIndex = 3;

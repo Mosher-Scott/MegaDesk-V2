@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -165,15 +166,44 @@ namespace MegaDesk_Mosher
             DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
 
             // Now go back to the View Quote form
+            //Validate that rush order list is accessible
+
+            //this is to prevent user from going on to AddQuote if rushOrderPrices.txt can't be found.
+            /*
+            string path = @"rushOrderPrices.txt";
+            if (File.Exists(path)) 
+            {
+           
+                try
+                {
+                    //Lanch Add Quote Form
+                    viewDisplayQuoteForm.Tag = this;
+                    viewDisplayQuoteForm.Show(this);
+
+                    // Now close this window
+                    Hide();
+                }
+                catch(Exception ex)
+                {
+                  MessageBox.Show("Cannot process quote. Error.");
+                  Console.WriteLine(ex.Message);
+                        }
+            }
+            else
+            {
+                MessageBox.Show("Price list could not be found.");
+            }
+            */
+
+            //Lanch Add Quote Form
             viewDisplayQuoteForm.Tag = this;
             viewDisplayQuoteForm.Show(this);
 
             // Now close this window
             Hide();
-
         }
 
-       private void validateDeskWidthInput(object sender, CancelEventArgs e)
+        private void validateDeskWidthInput(object sender, CancelEventArgs e)
         {
 
             //  Get the width input.  If not a number, throw an exception
@@ -301,6 +331,8 @@ namespace MegaDesk_Mosher
 
             return valid;
         }
+
+        
 
         //private void validateRushoptionInput(object sender, CancelEventArgs e)
         //{
