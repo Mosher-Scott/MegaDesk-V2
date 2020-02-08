@@ -107,7 +107,7 @@ namespace MegaDesk_Mosher
         }
 
         //Access DeskQuote to obtain rushOrder
-        DeskQuote newQuote = new DeskQuote(quoteFirstName, quoteLastName, quoteDate, deskQuoteTotal, quoteDesk);
+        DeskQuote newQuote = new DeskQuote(quoteFirstName, quoteLastName, quoteDate, deskQuoteTotal, quoteMaterial, quoteDesk);
         //TODO: Figure out how to not include these but grab method from DeskQuote. Maybe
         // move getRushOrderPrice() to DeskQuote?
         
@@ -115,6 +115,7 @@ namespace MegaDesk_Mosher
         private static string quoteLastName;
         private static string quoteDate;
         private static double deskQuoteTotal;
+        private static string quoteMaterial;
         private static Desk quoteDesk;
 
         // Gets the rush order options based on desk size

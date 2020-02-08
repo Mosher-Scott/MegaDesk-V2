@@ -110,6 +110,7 @@ namespace MegaDesk_Mosher
             numberOfDrawersMessage.SetToolTip(NumberOfDrawersInputBox, "Min 0, Max 7");
         }
 
+        /* Taking out hover event for old Material Box -TS
         private void SurfaceMaterialInputBox_MouseHover(object sender, EventArgs e)
         {
             ToolTip surfaceMaterialMessage = new ToolTip();
@@ -117,6 +118,7 @@ namespace MegaDesk_Mosher
             surfaceMaterialMessage.IsBalloon = true;
             surfaceMaterialMessage.SetToolTip(SurfaceMaterialInputBox, "Laminate, oak, Rosewood, Veneer, Pine");
         }
+        */
 
         private void RushOrderInputBox_MouseHover(object sender, EventArgs e)
         {
@@ -128,7 +130,10 @@ namespace MegaDesk_Mosher
 
         private void GenerateQuote(object sender, EventArgs e)
         {
-            int rushOrderOption;
+
+
+            //Check if the material drop down has a value -TS
+            if (materialBox.Text == "")
 
             // Validate First name field
             if (string.IsNullOrWhiteSpace(CustomerNameInputBox.Text))
@@ -162,34 +167,65 @@ namespace MegaDesk_Mosher
 
             //set Rush Day to Value
             if (RushRadioNone.Checked)
+
             {
-                rushOrderOption = 0;
+                // Validation message. 
+                errorProvider1.SetError(materialBox, "Material Selection Required.");
+                matRequired.Text = " -Required";
+
             }
-            else if (RushRadioThree.Checked)
-            {
-                rushOrderOption = 3;
-            }
-            else if (RushRadioFive.Checked)
-            {
-                rushOrderOption = 5;
-            }
-            else if (RushRadioSeven.Checked)
-            {
-                rushOrderOption = 7;
-            }
+
             else
             {
-                rushOrderOption = 0;
-            }
+                int rushOrderOption;
+
+
+                //set Rush Day to Value
+                if (RushRadioNone.Checked)
+                {
+                    rushOrderOption = 0;
+                }
+                else if (RushRadioThree.Checked)
+                {
+                    rushOrderOption = 3;
+                }
+                else if (RushRadioFive.Checked)
+                {
+                    rushOrderOption = 5;
+                }
+                else if (RushRadioSeven.Checked)
+                {
+                    rushOrderOption = 7;
+                }
+                else
+                {
+                    rushOrderOption = 0;
+                }
 
             // Try block will try to get the data & send it.  Everything will fail if a field is null
             try
             {
+
                 string clientFirstName = CustomerNameInputBox.Text;
                 string clientLastName = LastNameInputBox.Text;
                 double width = double.Parse(DeskWidthInputBox.Text);
                 double depth = double.Parse(DeskDepthtInputBox.Text);
                 int drawers = int.Parse(NumberOfDrawersInputBox.Text);
+
+                string material = materialBox.Text;
+                //Old Surface Material Textbox:
+                //string material = SurfaceMaterialInputBox.Text;
+                //int rushOrderOption = int.Parse(RushOrderInputBox.Text);
+
+                // Scott - I don't think we need to create a Desk object here.  With the way I've currently written the code, I create a desk object on the DisplayQuotes form
+                // Desk myDesk = new Desk(width, depth, drawers, material, rushOrderOption);
+
+                DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
+
+                // Now go back to the View Quote form
+                viewDisplayQuoteForm.Tag = this;
+                viewDisplayQuoteForm.Show(this);
+
                 string material = SurfaceMaterialInputBox.Text;
 
                 DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
@@ -205,6 +241,10 @@ namespace MegaDesk_Mosher
                 MessageBox.Show("One or more of the fields is empty.  Please fill it in.");
             }
 
+
+                // Now close this window
+                Hide();
+            }
         }
 
         private void validateDeskWidthInput(object sender, CancelEventArgs e)
@@ -295,7 +335,7 @@ namespace MegaDesk_Mosher
         {
             try
             {
-                string surfaceMaterial = SurfaceMaterialInputBox.Text;
+                string surfaceMaterial = materialBox.Text;
 
                 Boolean isInputValid = isValidSurfaceMaterial(surfaceMaterial);
 
@@ -303,22 +343,22 @@ namespace MegaDesk_Mosher
                 // While the validation fails, change the text color
                 if (!isInputValid)
                 {
-                    SurfaceMaterialInputBox.ForeColor = Color.Black;
-                    SurfaceMaterialInputBox.BackColor = Color.Red;
-                    SurfaceMaterialInputBox.Focus();
+                    materialBox.ForeColor = Color.Black;
+                    materialBox.BackColor = Color.Red;
+                    materialBox.Focus();
                     MessageBox.Show("Please enter one of the following:\n Laminate\n Oak\n Rosewood\n Veneer\n Pine\n");
                 }
 
 
-                SurfaceMaterialInputBox.ForeColor = Color.Black;
-                SurfaceMaterialInputBox.BackColor = Color.White;
+                materialBox.ForeColor = Color.Black;
+                materialBox.BackColor = Color.White;
 
             }
             catch (FormatException)
             {
                 MessageBox.Show("Please enter one of the following: Laminate\n Oak\n Rosewood\n Veneer\n Pine\n");
-                SurfaceMaterialInputBox.ForeColor = Color.Red;
-                SurfaceMaterialInputBox.Focus();
+                materialBox.ForeColor = Color.Red;
+                materialBox.Focus();
             }
         }
 
@@ -336,6 +376,54 @@ namespace MegaDesk_Mosher
             return valid;
         }
 
+
+
+        private void matValue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialBox_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void validateRushoptionInput(object sender, CancelEventArgs e)
+        //{
+        //    try
+        //    {
+        //        int rushOption = int.Parse(RushOrderInputBox.Text);
+
+
+        //        // While the validation fails, change the text color
+        //        if (rushOption == 3 || rushOption == 5 || rushOption == 7 || rushOption == 14)
+        //        {
+
+        //        } else
+        //        {
+        //            RushOrderInputBox.ForeColor = Color.Black;
+        //            RushOrderInputBox.BackColor = Color.Red;
+        //            RushOrderInputBox.Focus();
+        //            MessageBox.Show($"Valid days are 3, 5, 7, or 14.  You entered {rushOption}");
+        //        }
+
+
+        //        RushOrderInputBox.ForeColor = Color.Black;
+        //        RushOrderInputBox.BackColor = Color.White;
+
+        //    }
+        //    catch (FormatException)
+        //    {
+        //        MessageBox.Show("Please enter a number for the Number of Drawers");
+        //        RushOrderInputBox.ForeColor = Color.Red;
+        //        RushOrderInputBox.Focus();
+        //    }
+        //}
+
         private void CustomerNameInputBox_Validating(object sender, CancelEventArgs e)
         {
             if (!Regex.IsMatch(CustomerNameInputBox.Text, @"^[a-zA-Z]+$"))
@@ -344,6 +432,7 @@ namespace MegaDesk_Mosher
                 CustomerNameInputBox.Text = "";
             }
         }
+
 
         private void LastNameInputBox_TextChanged(object sender, EventArgs e)
         {
