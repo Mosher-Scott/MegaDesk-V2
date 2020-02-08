@@ -45,9 +45,9 @@
             // 
             // CloseFormButton
             // 
-            this.CloseFormButton.Location = new System.Drawing.Point(12, 350);
+            this.CloseFormButton.Location = new System.Drawing.Point(12, 377);
             this.CloseFormButton.Name = "CloseFormButton";
-            this.CloseFormButton.Size = new System.Drawing.Size(111, 35);
+            this.CloseFormButton.Size = new System.Drawing.Size(111, 38);
             this.CloseFormButton.TabIndex = 2;
             this.CloseFormButton.Text = "&Return To Main";
             this.CloseFormButton.UseVisualStyleBackColor = true;
@@ -56,9 +56,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.label1.Location = new System.Drawing.Point(13, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 13);
+            this.label1.Size = new System.Drawing.Size(138, 14);
             this.label1.TabIndex = 3;
             this.label1.Text = "Search Quotes by Material:";
             // 
@@ -72,19 +73,19 @@
             "Rosewood",
             "Veneer",
             "Pine"});
-            this.materialBox.Location = new System.Drawing.Point(12, 25);
+            this.materialBox.Location = new System.Drawing.Point(12, 27);
             this.materialBox.Name = "materialBox";
-            this.materialBox.Size = new System.Drawing.Size(121, 21);
+            this.materialBox.Size = new System.Drawing.Size(121, 22);
             this.materialBox.TabIndex = 11;
             this.materialBox.SelectedIndexChanged += new System.EventHandler(this.materialBox_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 52);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 56);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(544, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(544, 314);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -102,11 +103,11 @@
             // 
             // SearchQuotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(599, 399);
+            this.ClientSize = new System.Drawing.Size(599, 430);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.materialBox);
             this.Controls.Add(this.label1);
