@@ -19,6 +19,7 @@ namespace MegaDesk_Mosher
         public double quoteTotal { get; set; }
         // TODO:  Change this from a txt file to json file
         public const string SAVEDQUOTEFILE = "savedQuotes.json";  // Since this won't change
+        public const string RUSHORDERPRICEFILE = "rushOrderPrices.txt";
 
         // Create an empty desk object to be used
         public Desk userDesk;
@@ -33,6 +34,7 @@ namespace MegaDesk_Mosher
         // Constructor with values
         public DeskQuote(string quoteFirstName, string quoteLastName, string quoteDate, double deskQuoteTotal, Desk quoteDesk)
         {
+
             clientFirstName = quoteFirstName;
             clientLastName = quoteLastName;
             submitDate = quoteDate;
@@ -54,6 +56,20 @@ namespace MegaDesk_Mosher
 
         }
 
+        // Checks if the rushorderprice file exists or not.  If it doesn't, then this will create it.
+        public static void checkIfRushorderPriceExists()
+        {
+            if (!File.Exists(RUSHORDERPRICEFILE))
+            {
+                string prices = "60\n70\n80\n40\n50\n60\n30\n35\n40";
+
+                using (StreamWriter textFile = new StreamWriter(RUSHORDERPRICEFILE, false))
+                {
+                    textFile.WriteLine(prices);
+                }
+            }
+        }
+
         public void convertListToJson()
         {
             // Convert the object to a json string, indented
@@ -71,19 +87,11 @@ namespace MegaDesk_Mosher
 
         //Get Rush Order
         //TODO: figure out file
-
-        //This method will do my validation
-
-
-        public string path = @"rushOrderPrices.txt";
-
         public int[,] GetRushOrder()
         {
-            
             try
             {
-
-                
+                string path = RUSHORDERPRICEFILE;
                 string[] orderPrices = File.ReadAllLines(path);
                 int[,] rushOrderGrid = new int[3, 3];
 
@@ -97,20 +105,21 @@ namespace MegaDesk_Mosher
                     {
                         int output = int.Parse(orderPrices[x]);
                         rushOrderGrid[i, j] = output;
-                        //MessageBox.Show("Test:" + i + ", " + j + " " + rushOrderGrid[i, j]);
+                        //MessageBox.Show("Test:" + i + ", " + j + " " + rushOrderGrid[i,j]);
                         x++;
                     }
 
                 }
                 return rushOrderGrid;
             }
-            catch (FileNotFoundException e)
+
+            catch (FileNotFoundException)
             {
-                MessageBox.Show("Error. File containing rush order prices not found. Invalid quote.");
-                Console.WriteLine(e);
+
+                MessageBox.Show("Error. File containing rush order prices not found.");
+                throw;
             }
-            int[,] rushOrderGridTest = new int[3, 3];
-            return rushOrderGridTest;
+
         }
 
     }
