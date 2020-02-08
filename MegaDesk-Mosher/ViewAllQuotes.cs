@@ -29,7 +29,7 @@ namespace MegaDesk_Mosher
             dataGridView1.DataSource = DeskQuote.listOfQuotes;
 
             // This will load quotes from the list while the program is running
-            var list = new BindingList<DeskQuote>(DeskQuote.listOfQuotes);
+            //var list = new BindingList<DeskQuote>(DeskQuote.listOfQuotes);
         }
 
 

@@ -55,6 +55,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clientFirstNameDataGridViewTextBoxColumn,
@@ -65,32 +66,37 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 45);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 275);
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridView1.Size = new System.Drawing.Size(563, 285);
             this.dataGridView1.TabIndex = 3;
-
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-
             // 
             // clientFirstNameDataGridViewTextBoxColumn
             // 
+            this.clientFirstNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clientFirstNameDataGridViewTextBoxColumn.DataPropertyName = "clientFirstName";
             this.clientFirstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.clientFirstNameDataGridViewTextBoxColumn.Name = "clientFirstNameDataGridViewTextBoxColumn";
             // 
             // clientLastNameDataGridViewTextBoxColumn
             // 
+            this.clientLastNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clientLastNameDataGridViewTextBoxColumn.DataPropertyName = "clientLastName";
             this.clientLastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.clientLastNameDataGridViewTextBoxColumn.Name = "clientLastNameDataGridViewTextBoxColumn";
             // 
             // submitDateDataGridViewTextBoxColumn
             // 
+            this.submitDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.submitDateDataGridViewTextBoxColumn.DataPropertyName = "submitDate";
             this.submitDateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.submitDateDataGridViewTextBoxColumn.MinimumWidth = 120;
             this.submitDateDataGridViewTextBoxColumn.Name = "submitDateDataGridViewTextBoxColumn";
+            this.submitDateDataGridViewTextBoxColumn.Width = 120;
             // 
             // quoteTotalDataGridViewTextBoxColumn
             // 
+            this.quoteTotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.quoteTotalDataGridViewTextBoxColumn.DataPropertyName = "quoteTotal";
             this.quoteTotalDataGridViewTextBoxColumn.HeaderText = "Quote Total";
             this.quoteTotalDataGridViewTextBoxColumn.Name = "quoteTotalDataGridViewTextBoxColumn";
