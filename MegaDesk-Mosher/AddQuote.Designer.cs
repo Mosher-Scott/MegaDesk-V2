@@ -54,9 +54,9 @@
             // 
             // CloseFormButton
             // 
-            this.CloseFormButton.Location = new System.Drawing.Point(12, 352);
+            this.CloseFormButton.Location = new System.Drawing.Point(12, 327);
             this.CloseFormButton.Name = "CloseFormButton";
-            this.CloseFormButton.Size = new System.Drawing.Size(111, 38);
+            this.CloseFormButton.Size = new System.Drawing.Size(111, 35);
             this.CloseFormButton.TabIndex = 12;
             this.CloseFormButton.Text = "&Return To Main";
             this.CloseFormButton.UseVisualStyleBackColor = true;
@@ -83,9 +83,9 @@
             this.groupBox1.Controls.Add(this.CustomerNameInputBox);
             this.groupBox1.Controls.Add(this.CustomerNameLabel);
             this.groupBox1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 323);
+            this.groupBox1.Size = new System.Drawing.Size(326, 300);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Information";
@@ -93,16 +93,17 @@
             // LastNameInputBox
             // 
             this.LastNameInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameInputBox.Location = new System.Drawing.Point(196, 58);
+            this.LastNameInputBox.Location = new System.Drawing.Point(196, 54);
             this.LastNameInputBox.Name = "LastNameInputBox";
             this.LastNameInputBox.Size = new System.Drawing.Size(102, 23);
             this.LastNameInputBox.TabIndex = 2;
+            this.LastNameInputBox.TextChanged += new System.EventHandler(this.LastNameInputBox_TextChanged);
             // 
             // CustomerLastNameLabel
             // 
             this.CustomerLastNameLabel.AutoSize = true;
             this.CustomerLastNameLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerLastNameLabel.Location = new System.Drawing.Point(14, 67);
+            this.CustomerLastNameLabel.Location = new System.Drawing.Point(14, 62);
             this.CustomerLastNameLabel.Name = "CustomerLastNameLabel";
             this.CustomerLastNameLabel.Size = new System.Drawing.Size(63, 15);
             this.CustomerLastNameLabel.TabIndex = 33;
@@ -112,7 +113,7 @@
             // 
             this.RushRadioSeven.AutoSize = true;
             this.RushRadioSeven.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.RushRadioSeven.Location = new System.Drawing.Point(196, 267);
+            this.RushRadioSeven.Location = new System.Drawing.Point(196, 248);
             this.RushRadioSeven.Name = "RushRadioSeven";
             this.RushRadioSeven.Size = new System.Drawing.Size(59, 19);
             this.RushRadioSeven.TabIndex = 9;
@@ -124,7 +125,7 @@
             // 
             this.RushRadioFive.AutoSize = true;
             this.RushRadioFive.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.RushRadioFive.Location = new System.Drawing.Point(196, 247);
+            this.RushRadioFive.Location = new System.Drawing.Point(196, 229);
             this.RushRadioFive.Name = "RushRadioFive";
             this.RushRadioFive.Size = new System.Drawing.Size(59, 19);
             this.RushRadioFive.TabIndex = 8;
@@ -136,7 +137,7 @@
             // 
             this.RushRadioThree.AutoSize = true;
             this.RushRadioThree.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.RushRadioThree.Location = new System.Drawing.Point(196, 226);
+            this.RushRadioThree.Location = new System.Drawing.Point(196, 210);
             this.RushRadioThree.Name = "RushRadioThree";
             this.RushRadioThree.Size = new System.Drawing.Size(59, 19);
             this.RushRadioThree.TabIndex = 7;
@@ -148,7 +149,7 @@
             // 
             this.RushRadioNone.AutoSize = true;
             this.RushRadioNone.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.RushRadioNone.Location = new System.Drawing.Point(196, 286);
+            this.RushRadioNone.Location = new System.Drawing.Point(196, 266);
             this.RushRadioNone.Name = "RushRadioNone";
             this.RushRadioNone.Size = new System.Drawing.Size(105, 19);
             this.RushRadioNone.TabIndex = 10;
@@ -160,7 +161,7 @@
             // 
             this.RushOrderLabel.AutoSize = true;
             this.RushOrderLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RushOrderLabel.Location = new System.Drawing.Point(13, 226);
+            this.RushOrderLabel.Location = new System.Drawing.Point(13, 210);
             this.RushOrderLabel.Name = "RushOrderLabel";
             this.RushOrderLabel.Size = new System.Drawing.Size(111, 15);
             this.RushOrderLabel.TabIndex = 28;
@@ -169,7 +170,7 @@
             // SurfaceMaterialInputBox
             // 
             this.SurfaceMaterialInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurfaceMaterialInputBox.Location = new System.Drawing.Point(196, 188);
+            this.SurfaceMaterialInputBox.Location = new System.Drawing.Point(196, 175);
             this.SurfaceMaterialInputBox.Name = "SurfaceMaterialInputBox";
             this.SurfaceMaterialInputBox.Size = new System.Drawing.Size(102, 23);
             this.SurfaceMaterialInputBox.TabIndex = 6;
@@ -180,7 +181,7 @@
             // 
             this.SurfaceMaterialLabel.AutoSize = true;
             this.SurfaceMaterialLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurfaceMaterialLabel.Location = new System.Drawing.Point(13, 197);
+            this.SurfaceMaterialLabel.Location = new System.Drawing.Point(13, 183);
             this.SurfaceMaterialLabel.Name = "SurfaceMaterialLabel";
             this.SurfaceMaterialLabel.Size = new System.Drawing.Size(92, 15);
             this.SurfaceMaterialLabel.TabIndex = 26;
@@ -189,7 +190,7 @@
             // NumberOfDrawersInputBox
             // 
             this.NumberOfDrawersInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumberOfDrawersInputBox.Location = new System.Drawing.Point(196, 146);
+            this.NumberOfDrawersInputBox.Location = new System.Drawing.Point(196, 136);
             this.NumberOfDrawersInputBox.Name = "NumberOfDrawersInputBox";
             this.NumberOfDrawersInputBox.Size = new System.Drawing.Size(54, 23);
             this.NumberOfDrawersInputBox.TabIndex = 5;
@@ -200,7 +201,7 @@
             // 
             this.NumberofDrawersLabel.AutoSize = true;
             this.NumberofDrawersLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumberofDrawersLabel.Location = new System.Drawing.Point(15, 166);
+            this.NumberofDrawersLabel.Location = new System.Drawing.Point(15, 154);
             this.NumberofDrawersLabel.Name = "NumberofDrawersLabel";
             this.NumberofDrawersLabel.Size = new System.Drawing.Size(112, 15);
             this.NumberofDrawersLabel.TabIndex = 25;
@@ -209,7 +210,7 @@
             // DeskDepthtInputBox
             // 
             this.DeskDepthtInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeskDepthtInputBox.Location = new System.Drawing.Point(196, 117);
+            this.DeskDepthtInputBox.Location = new System.Drawing.Point(196, 109);
             this.DeskDepthtInputBox.Name = "DeskDepthtInputBox";
             this.DeskDepthtInputBox.Size = new System.Drawing.Size(54, 23);
             this.DeskDepthtInputBox.TabIndex = 4;
@@ -220,7 +221,7 @@
             // 
             this.DeskDepthtInputLabel.AutoSize = true;
             this.DeskDepthtInputLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeskDepthtInputLabel.Location = new System.Drawing.Point(15, 135);
+            this.DeskDepthtInputLabel.Location = new System.Drawing.Point(15, 125);
             this.DeskDepthtInputLabel.Name = "DeskDepthtInputLabel";
             this.DeskDepthtInputLabel.Size = new System.Drawing.Size(67, 15);
             this.DeskDepthtInputLabel.TabIndex = 24;
@@ -230,7 +231,7 @@
             // DeskWidthInputBox
             // 
             this.DeskWidthInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeskWidthInputBox.Location = new System.Drawing.Point(196, 88);
+            this.DeskWidthInputBox.Location = new System.Drawing.Point(196, 82);
             this.DeskWidthInputBox.Name = "DeskWidthInputBox";
             this.DeskWidthInputBox.Size = new System.Drawing.Size(54, 23);
             this.DeskWidthInputBox.TabIndex = 3;
@@ -241,7 +242,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 103);
+            this.label1.Location = new System.Drawing.Point(15, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 23;
@@ -250,17 +251,18 @@
             // CustomerNameInputBox
             // 
             this.CustomerNameInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerNameInputBox.Location = new System.Drawing.Point(196, 30);
+            this.CustomerNameInputBox.Location = new System.Drawing.Point(196, 28);
             this.CustomerNameInputBox.Name = "CustomerNameInputBox";
             this.CustomerNameInputBox.Size = new System.Drawing.Size(102, 23);
             this.CustomerNameInputBox.TabIndex = 0;
+            this.CustomerNameInputBox.Validating += new System.ComponentModel.CancelEventHandler(this.CustomerNameInputBox_Validating);
             // 
             // CustomerNameLabel
             // 
             this.CustomerNameLabel.AccessibleName = "";
             this.CustomerNameLabel.AutoSize = true;
             this.CustomerNameLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CustomerNameLabel.Location = new System.Drawing.Point(13, 39);
+            this.CustomerNameLabel.Location = new System.Drawing.Point(13, 36);
             this.CustomerNameLabel.Name = "CustomerNameLabel";
             this.CustomerNameLabel.Size = new System.Drawing.Size(64, 15);
             this.CustomerNameLabel.TabIndex = 4;
@@ -269,9 +271,9 @@
             // GenerateQuoteButton
             // 
             this.GenerateQuoteButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.GenerateQuoteButton.Location = new System.Drawing.Point(129, 352);
+            this.GenerateQuoteButton.Location = new System.Drawing.Point(129, 327);
             this.GenerateQuoteButton.Name = "GenerateQuoteButton";
-            this.GenerateQuoteButton.Size = new System.Drawing.Size(111, 38);
+            this.GenerateQuoteButton.Size = new System.Drawing.Size(111, 35);
             this.GenerateQuoteButton.TabIndex = 11;
             this.GenerateQuoteButton.Text = "&Generate Quote";
             this.GenerateQuoteButton.UseVisualStyleBackColor = true;
@@ -279,11 +281,11 @@
             // 
             // AddQuote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(599, 399);
+            this.ClientSize = new System.Drawing.Size(599, 370);
             this.Controls.Add(this.GenerateQuoteButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CloseFormButton);
