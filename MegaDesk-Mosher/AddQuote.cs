@@ -417,7 +417,7 @@ namespace MegaDesk_Mosher
 
         private void CustomerNameInputBox_Validating(object sender, CancelEventArgs e)
         {
-            if (!Regex.IsMatch(CustomerNameInputBox.Text, @"^[a-zA-Z]+$"))
+            if (!Regex.IsMatch(CustomerNameInputBox.Text, @"^[a-zA-Z \-\']+$"))
             {
                 MessageBox.Show("First name cannot include special characters or numbers.");
                 CustomerNameInputBox.Text = "";
@@ -427,7 +427,7 @@ namespace MegaDesk_Mosher
 
         private void LastNameInputBox_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(LastNameInputBox.Text, @"^[a-zA-Z]+$"))
+            if (!Regex.IsMatch(LastNameInputBox.Text, @"^[a-zA-Z \-\']+$"))
             {
                 MessageBox.Show("Last name cannot include special characters or numbers.");
                 LastNameInputBox.Text = "";
