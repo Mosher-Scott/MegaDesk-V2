@@ -26,5 +26,10 @@ namespace MegaDesk_Mosher
             // Now close this window
             Close();
         }
+
+        private void SearchQuotes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

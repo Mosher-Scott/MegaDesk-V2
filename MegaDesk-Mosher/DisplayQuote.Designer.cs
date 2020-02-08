@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayQuoteInfo));
             this.PriceInformation = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TotalPriceValue = new System.Windows.Forms.Label();
@@ -380,6 +381,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(371, 304);
             this.Controls.Add(this.SaveAndNewButton);
             this.Controls.Add(this.OrderInfoLabel);
@@ -387,6 +389,7 @@
             this.Controls.Add(this.ReturnToAddQuoteScreenLabel);
             this.Controls.Add(this.SaveQuoteButton);
             this.Controls.Add(this.PriceInformation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DisplayQuoteInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Display Quote";
