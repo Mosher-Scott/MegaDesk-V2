@@ -167,8 +167,10 @@ namespace MegaDesk_Mosher
 
             // Now go back to the View Quote form
             //Validate that rush order list is accessible
-            string path = @"rushOrderPrices.txt";
 
+            //this is to prevent user from going on to AddQuote if rushOrderPrices.txt can't be found.
+            /*
+            string path = @"rushOrderPrices.txt";
             if (File.Exists(path)) 
             {
            
@@ -191,11 +193,12 @@ namespace MegaDesk_Mosher
             {
                 MessageBox.Show("Price list could not be found.");
             }
-            
+            */
+
 
         }
 
-       private void validateDeskWidthInput(object sender, CancelEventArgs e)
+        private void validateDeskWidthInput(object sender, CancelEventArgs e)
         {
 
             //  Get the width input.  If not a number, throw an exception
