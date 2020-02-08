@@ -93,8 +93,7 @@ namespace MegaDesk_Mosher
 
         }
 
-        // Button for saving the quote to a JSON file
-        private void SaveQuoteButton_Click(object sender, EventArgs e)
+        private void SaveQuote()
         {
             // test
             DateTime currentDate = DateTime.Now;
@@ -110,6 +109,13 @@ namespace MegaDesk_Mosher
             quoteInfo.convertListToJson();
 
             MessageBox.Show("Quote Saved");
+        }
+
+        // Button for saving the quote to a JSON file
+        private void SaveQuoteButton_Click(object sender, EventArgs e)
+        {
+
+            SaveQuote();
 
             // TODO:  Where should the tool go once a quote is saved?
             MainMenu mainMenuForm = new MainMenu();
@@ -117,6 +123,19 @@ namespace MegaDesk_Mosher
             mainMenuForm.Show();
 
             Close();
+        }
+
+        private void SaveAndNewButton_Click(object sender, EventArgs e)
+        {
+            SaveQuote();
+
+            AddQuote addQuoteForm = new AddQuote();
+            addQuoteForm.Show();
+
+            // Close the window
+            this.Close();
+
+
         }
     }
 }
