@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDesk_Mosher
 {
-    //Testing Push
-    //Trevor Testing Push
+
     public partial class AddQuote : Form
     {
 
@@ -24,16 +17,11 @@ namespace MegaDesk_Mosher
 
         private void AddQuote_Load(object sender, EventArgs e)
         {
-
-        
         }
 
+        // Code for what to do when the user wants to go back to the main menu
         private void AddNewQuoteButton_Click(object sender, EventArgs e)
         {
-            // Allows you to shrink code blocks
-            #region
-
-            #endregion
 
             MainMenu viewMainMenu =  new MainMenu();
             viewMainMenu.Show();
@@ -46,6 +34,10 @@ namespace MegaDesk_Mosher
         #region
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void CustomerNameInputBox_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -84,8 +76,24 @@ namespace MegaDesk_Mosher
 
         }
 
+        private void matValue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
+        // ---- This section contains the popup messages
+        #region
         private void textBox1_PopupMessage(object sender, EventArgs e)
         {
             ToolTip deskWidthMessage = new ToolTip();
@@ -127,7 +135,9 @@ namespace MegaDesk_Mosher
             rushOrderMessage.IsBalloon = true;
             //rushOrderMessage.SetToolTip(RushOrderInputBox, "3, 5, 7, or 14 Days (Normal Production)");
         }
+        #endregion
 
+        // When the person fills in the all the fields and clicks the Generate Quote button, this will run
         private void GenerateQuote(object sender, EventArgs e)
         {         
 
@@ -170,10 +180,10 @@ namespace MegaDesk_Mosher
 
             }
 
+            // If no validation errors, create the quote
             else
             {
                 int rushOrderOption;
-
 
                 //set Rush Day to Value
                 if (RushRadioNone.Checked)
@@ -200,19 +210,12 @@ namespace MegaDesk_Mosher
             // Try block will try to get the data & send it.  Everything will fail if a field is null
             try
             {
-
                     string clientFirstName = CustomerNameInputBox.Text;
                     string clientLastName = LastNameInputBox.Text;
                     double width = double.Parse(DeskWidthInputBox.Text);
                     double depth = double.Parse(DeskDepthtInputBox.Text);
                     int drawers = int.Parse(NumberOfDrawersInputBox.Text);
                     string material = materialBox.Text;
-                    //Old Surface Material Textbox:
-                    //string material = SurfaceMaterialInputBox.Text;
-                    //int rushOrderOption = int.Parse(RushOrderInputBox.Text);
-
-                    // Scott - I don't think we need to create a Desk object here.  With the way I've currently written the code, I create a desk object on the DisplayQuotes form
-                    // Desk myDesk = new Desk(width, depth, drawers, material, rushOrderOption);
 
                     DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
 
@@ -226,16 +229,14 @@ namespace MegaDesk_Mosher
             {
                 MessageBox.Show("One or more of the fields is empty.  Please fill it in.");
             }
-
-
                 // Now close this window
                 Hide();
             }
         }
 
+        // This validates the width input
         private void validateDeskWidthInput(object sender, CancelEventArgs e)
         {
-
             //  Get the width input.  If not a number, throw an exception
             try
             {
@@ -263,6 +264,7 @@ namespace MegaDesk_Mosher
 
         }
 
+        // This validates the depth input
         private void validateDeskDepthInput(object sender, CancelEventArgs e)
         {
             try
@@ -290,6 +292,7 @@ namespace MegaDesk_Mosher
             }
         }
 
+        // Validates the number of drawers entered
         private void validateNumDrawersInput(object sender, CancelEventArgs e)
         {
             try
@@ -317,6 +320,7 @@ namespace MegaDesk_Mosher
             }
         }
 
+        // Validates the surface material
         private void validateSurfaceMaterialInput(object sender, CancelEventArgs e)
         {
             try
@@ -362,54 +366,7 @@ namespace MegaDesk_Mosher
             return valid;
         }
 
-
-
-        private void matValue_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialBox_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-        }
-
-        private void label2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void validateRushoptionInput(object sender, CancelEventArgs e)
-        //{
-        //    try
-        //    {
-        //        int rushOption = int.Parse(RushOrderInputBox.Text);
-
-
-        //        // While the validation fails, change the text color
-        //        if (rushOption == 3 || rushOption == 5 || rushOption == 7 || rushOption == 14)
-        //        {
-
-        //        } else
-        //        {
-        //            RushOrderInputBox.ForeColor = Color.Black;
-        //            RushOrderInputBox.BackColor = Color.Red;
-        //            RushOrderInputBox.Focus();
-        //            MessageBox.Show($"Valid days are 3, 5, 7, or 14.  You entered {rushOption}");
-        //        }
-
-
-        //        RushOrderInputBox.ForeColor = Color.Black;
-        //        RushOrderInputBox.BackColor = Color.White;
-
-        //    }
-        //    catch (FormatException)
-        //    {
-        //        MessageBox.Show("Please enter a number for the Number of Drawers");
-        //        RushOrderInputBox.ForeColor = Color.Red;
-        //        RushOrderInputBox.Focus();
-        //    }
-        //}
-
+        // Validates the first name input box contains valid characters
         private void CustomerNameInputBox_Validating(object sender, CancelEventArgs e)
         {
             if (!Regex.IsMatch(CustomerNameInputBox.Text, @"^[a-zA-Z \-\']+$"))
@@ -419,7 +376,7 @@ namespace MegaDesk_Mosher
             }
         }
 
-
+        // Validates the last name input so that it contains valid characters
         private void LastNameInputBox_TextChanged(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(LastNameInputBox.Text, @"^[a-zA-Z \-\']+$"))
@@ -429,9 +386,5 @@ namespace MegaDesk_Mosher
             }
         }
 
-        private void CustomerNameInputBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

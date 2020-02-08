@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Windows.Forms;
 
 
@@ -82,6 +77,7 @@ namespace MegaDesk_Mosher
             }
         }
 
+        // This method will convert the list of quotes into a json string, and then write it to file
         public void convertListToJson()
         {
             // Convert the object to a json string, indented
@@ -98,7 +94,6 @@ namespace MegaDesk_Mosher
         }
 
         //Get Rush Order
-        //TODO: figure out file
         public int[,] GetRushOrder()
         {
             int[,] rushOrderGrid = new int[3, 3];

@@ -1,13 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace MegaDesk_Mosher
@@ -26,7 +17,7 @@ namespace MegaDesk_Mosher
         private string quoteMaterial;
         private int quoteRushInfo;
 
-
+        // Initializes the form with data coming from the AddQuote form
         public DisplayQuoteInfo(string firstName, string lastName, double width, double depth, int drawers, string material, int rushOrderInfo)
         {
 
@@ -49,7 +40,7 @@ namespace MegaDesk_Mosher
             SurfaceValue.Text = material;
             RushValue.Text = rushOrderInfo.ToString();
 
-            // Create an desk object so we can use it
+            // Create a desk object so we can use it
             userDesk.deskWidth = width;
             userDesk.deskDepth = depth;
             userDesk.numDrawers = drawers;
@@ -93,18 +84,14 @@ namespace MegaDesk_Mosher
 
         }
 
+        // This will run when the user wants to save a quote
         private void SaveQuote()
         {
-            // test
+  
             DateTime currentDate = DateTime.Now;
 
             // Create a quote object
-
-            // TODO: Change my name into the variables.  Hardcoded for testing
             DeskQuote quoteInfo = new DeskQuote(quoteFirstName, quoteLastName, currentDate.ToString("MM/dd/yyyy H:mm tt"), userDesk.getTotalCost(), quoteMaterial, userDesk);
-
-
-
 
             // Add the quote to a list of quotes
             DeskQuote.listOfQuotes.Add(quoteInfo);
@@ -115,7 +102,7 @@ namespace MegaDesk_Mosher
             MessageBox.Show("Quote Saved");
         }
 
-        // Button for saving the quote to a JSON file
+        // This runs when the user saves a quote and wants to go back to the Main menu
         private void SaveQuoteButton_Click(object sender, EventArgs e)
         {
 
@@ -134,6 +121,7 @@ namespace MegaDesk_Mosher
         
         }
 
+        // This will run when the user clicks the Save & New button
         private void SaveAndNewButton_Click(object sender, EventArgs e)
         {
             SaveQuote();
@@ -143,9 +131,6 @@ namespace MegaDesk_Mosher
 
             // Close the window
             this.Close();
-
-
-
         }
     }
 }
