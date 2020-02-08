@@ -103,7 +103,7 @@ namespace MegaDesk_Mosher
             // TODO: Change my name into the variables.  Hardcoded for testing
             DeskQuote quoteInfo = new DeskQuote(quoteFirstName, quoteLastName, currentDate.ToString("MM/dd/yyyy H:mm tt"), userDesk.getTotalCost(), quoteMaterial, userDesk);
 
-            DeskQuote quoteInfo = new DeskQuote(quoteFirstName, quoteLastName, currentDate.ToString("MM/dd/yyyy H:mm tt"), userDesk.getTotalCost(), userDesk);
+
 
 
             // Add the quote to a list of quotes
