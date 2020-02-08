@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.CloseFormButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.submitDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quoteTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deskQuoteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -66,10 +66,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(690, 312);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // deskQuoteBindingSource
-            // 
-            this.deskQuoteBindingSource.DataSource = typeof(MegaDesk_Mosher.DeskQuote);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // clientFirstNameDataGridViewTextBoxColumn
             // 
@@ -94,6 +91,10 @@
             this.quoteTotalDataGridViewTextBoxColumn.DataPropertyName = "quoteTotal";
             this.quoteTotalDataGridViewTextBoxColumn.HeaderText = "quoteTotal";
             this.quoteTotalDataGridViewTextBoxColumn.Name = "quoteTotalDataGridViewTextBoxColumn";
+            // 
+            // deskQuoteBindingSource
+            // 
+            this.deskQuoteBindingSource.DataSource = typeof(MegaDesk_Mosher.DeskQuote);
             // 
             // ViewAllQuotes
             // 

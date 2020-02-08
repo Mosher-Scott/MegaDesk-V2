@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CloseFormButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.matRequired = new System.Windows.Forms.Label();
+            this.materialBox = new System.Windows.Forms.ComboBox();
             this.LastNameInputBox = new System.Windows.Forms.TextBox();
             this.CustomerLastNameLabel = new System.Windows.Forms.Label();
             this.RushRadioSeven = new System.Windows.Forms.RadioButton();
@@ -37,7 +40,6 @@
             this.RushRadioThree = new System.Windows.Forms.RadioButton();
             this.RushRadioNone = new System.Windows.Forms.RadioButton();
             this.RushOrderLabel = new System.Windows.Forms.Label();
-            this.SurfaceMaterialInputBox = new System.Windows.Forms.TextBox();
             this.SurfaceMaterialLabel = new System.Windows.Forms.Label();
             this.NumberOfDrawersInputBox = new System.Windows.Forms.TextBox();
             this.NumberofDrawersLabel = new System.Windows.Forms.Label();
@@ -48,7 +50,9 @@
             this.CustomerNameInputBox = new System.Windows.Forms.TextBox();
             this.CustomerNameLabel = new System.Windows.Forms.Label();
             this.GenerateQuoteButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // CloseFormButton
@@ -63,6 +67,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.matRequired);
+            this.groupBox1.Controls.Add(this.materialBox);
             this.groupBox1.Controls.Add(this.LastNameInputBox);
             this.groupBox1.Controls.Add(this.CustomerLastNameLabel);
             this.groupBox1.Controls.Add(this.RushRadioSeven);
@@ -70,7 +76,6 @@
             this.groupBox1.Controls.Add(this.RushRadioThree);
             this.groupBox1.Controls.Add(this.RushRadioNone);
             this.groupBox1.Controls.Add(this.RushOrderLabel);
-            this.groupBox1.Controls.Add(this.SurfaceMaterialInputBox);
             this.groupBox1.Controls.Add(this.SurfaceMaterialLabel);
             this.groupBox1.Controls.Add(this.NumberOfDrawersInputBox);
             this.groupBox1.Controls.Add(this.NumberofDrawersLabel);
@@ -87,6 +92,32 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Information";
+            // 
+            // matRequired
+            // 
+            this.matRequired.Font = new System.Drawing.Font("Nirmala UI", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.matRequired.ForeColor = System.Drawing.Color.Crimson;
+            this.matRequired.Location = new System.Drawing.Point(111, 185);
+            this.matRequired.Name = "matRequired";
+            this.matRequired.Size = new System.Drawing.Size(63, 17);
+            this.matRequired.TabIndex = 35;
+            this.matRequired.Click += new System.EventHandler(this.label2_Click_2);
+            // 
+            // materialBox
+            // 
+            this.materialBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialBox.FormattingEnabled = true;
+            this.materialBox.Items.AddRange(new object[] {
+            "Laminate",
+            "Oak",
+            "Rosewood",
+            "Veneer",
+            "Pine"});
+            this.materialBox.Location = new System.Drawing.Point(180, 175);
+            this.materialBox.Name = "materialBox";
+            this.materialBox.Size = new System.Drawing.Size(121, 29);
+            this.materialBox.TabIndex = 34;
+            this.materialBox.SelectedIndexChanged += new System.EventHandler(this.materialBox_SelectedIndexChanged);
             // 
             // LastNameInputBox
             // 
@@ -163,16 +194,6 @@
             this.RushOrderLabel.Size = new System.Drawing.Size(111, 15);
             this.RushOrderLabel.TabIndex = 28;
             this.RushOrderLabel.Text = "Rush Order Options";
-            // 
-            // SurfaceMaterialInputBox
-            // 
-            this.SurfaceMaterialInputBox.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurfaceMaterialInputBox.Location = new System.Drawing.Point(196, 175);
-            this.SurfaceMaterialInputBox.Name = "SurfaceMaterialInputBox";
-            this.SurfaceMaterialInputBox.Size = new System.Drawing.Size(102, 23);
-            this.SurfaceMaterialInputBox.TabIndex = 6;
-            this.SurfaceMaterialInputBox.MouseHover += new System.EventHandler(this.SurfaceMaterialInputBox_MouseHover);
-            this.SurfaceMaterialInputBox.Validating += new System.ComponentModel.CancelEventHandler(this.validateSurfaceMaterialInput);
             // 
             // SurfaceMaterialLabel
             // 
@@ -275,6 +296,10 @@
             this.GenerateQuoteButton.UseVisualStyleBackColor = true;
             this.GenerateQuoteButton.Click += new System.EventHandler(this.GenerateQuote);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +315,7 @@
             this.Load += new System.EventHandler(this.AddQuote_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,7 +327,6 @@
         private System.Windows.Forms.Label CustomerNameLabel;
         private System.Windows.Forms.Button GenerateQuoteButton;
         private System.Windows.Forms.Label RushOrderLabel;
-        private System.Windows.Forms.TextBox SurfaceMaterialInputBox;
         private System.Windows.Forms.Label SurfaceMaterialLabel;
         private System.Windows.Forms.TextBox NumberOfDrawersInputBox;
         private System.Windows.Forms.Label NumberofDrawersLabel;
@@ -315,5 +340,8 @@
         private System.Windows.Forms.RadioButton RushRadioNone;
         private System.Windows.Forms.TextBox LastNameInputBox;
         private System.Windows.Forms.Label CustomerLastNameLabel;
+        private System.Windows.Forms.ComboBox materialBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label matRequired;
     }
 }

@@ -17,6 +17,10 @@ namespace MegaDesk_Mosher
         public string clientLastName { get; set; }
         public string submitDate { get; set; }
         public double quoteTotal { get; set; }
+
+        //Adding Additional Fields for Material Search
+        public string Material { get; set; }
+
         // TODO:  Change this from a txt file to json file
         public const string SAVEDQUOTEFILE = "savedQuotes.json";  // Since this won't change
 
@@ -31,13 +35,14 @@ namespace MegaDesk_Mosher
         public DeskQuote() { }
 
         // Constructor with values
-        public DeskQuote(string quoteFirstName, string quoteLastName, string quoteDate, double deskQuoteTotal, Desk quoteDesk)
+        public DeskQuote(string quoteFirstName, string quoteLastName, string quoteDate, double deskQuoteTotal, string quoteMaterial, Desk quoteDesk)
         {
 
             clientFirstName = quoteFirstName;
             clientLastName = quoteLastName;
             submitDate = quoteDate;
             quoteTotal = deskQuoteTotal;
+            Material = quoteMaterial;
             userDesk = quoteDesk;
         }
 
