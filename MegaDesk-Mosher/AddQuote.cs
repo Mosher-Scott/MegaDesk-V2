@@ -129,6 +129,36 @@ namespace MegaDesk_Mosher
         {
             int rushOrderOption;
 
+            // Validate First name field
+            if (string.IsNullOrWhiteSpace(CustomerNameInputBox.Text))
+            {
+                MessageBox.Show("Error.  First name is Empty");
+            }
+
+            // Validate Last Name Field
+            if (string.IsNullOrWhiteSpace(CustomerNameInputBox.Text))
+            {
+                MessageBox.Show("Error.  Last name is Empty");
+            }
+
+            // Validate width Field
+            if (string.IsNullOrWhiteSpace(DeskWidthInputBox.Text))
+            {
+                MessageBox.Show("Error.  Width is Empty");
+            }
+
+            // Validate depth Field
+            if (string.IsNullOrWhiteSpace(DeskDepthtInputBox.Text))
+            {
+                MessageBox.Show("Error.  Depth is Empty");
+            }
+
+            // Validate depth Field
+            if (string.IsNullOrWhiteSpace(NumberOfDrawersInputBox.Text))
+            {
+                MessageBox.Show("Error.  Number of Drawers is Empty");
+            }
+
             //set Rush Day to Value
             if (RushRadioNone.Checked)
             {
@@ -151,50 +181,28 @@ namespace MegaDesk_Mosher
                 rushOrderOption = 0;
             }
 
-            //  TODO: Validate all fields before sending the data so someone can't submit empty/invalid data
-            string clientFirstName = CustomerNameInputBox.Text;
-            string clientLastName = LastNameInputBox.Text;
-            double width = double.Parse(DeskWidthInputBox.Text);
-            double depth = double.Parse(DeskDepthtInputBox.Text);
-            int drawers = int.Parse(NumberOfDrawersInputBox.Text);
-            string material = SurfaceMaterialInputBox.Text;
-            //int rushOrderOption = int.Parse(RushOrderInputBox.Text);
-
-            // Scott - I don't think we need to create a Desk object here.  With the way I've currently written the code, I create a desk object on the DisplayQuotes form
-            // Desk myDesk = new Desk(width, depth, drawers, material, rushOrderOption);
-
-            DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
-
-            // Now go back to the View Quote form
-            //Validate that rush order list is accessible
-
-            //this is to prevent user from going on to AddQuote if rushOrderPrices.txt can't be found.
-            /*
-            string path = @"rushOrderPrices.txt";
-            if (File.Exists(path)) 
+            // Try block will try to get the data & send it.  Everything will fail if a field is null
+            try
             {
-           
-                try
-                {
-                    //Lanch Add Quote Form
-                    viewDisplayQuoteForm.Tag = this;
-                    viewDisplayQuoteForm.Show(this);
+                string clientFirstName = CustomerNameInputBox.Text;
+                string clientLastName = LastNameInputBox.Text;
+                double width = double.Parse(DeskWidthInputBox.Text);
+                double depth = double.Parse(DeskDepthtInputBox.Text);
+                int drawers = int.Parse(NumberOfDrawersInputBox.Text);
+                string material = SurfaceMaterialInputBox.Text;
 
-                    // Now close this window
-                    Hide();
-                }
-                catch(Exception ex)
-                {
-                  MessageBox.Show("Cannot process quote. Error.");
-                  Console.WriteLine(ex.Message);
-                        }
-            }
-            else
+                DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
+
+                //Lanch Add Quote Form
+                viewDisplayQuoteForm.Tag = this;
+                viewDisplayQuoteForm.Show(this);
+
+                // Now close this window
+                Hide();
+            } catch (Exception)
             {
-                MessageBox.Show("Price list could not be found.");
+                MessageBox.Show("One or more of the fields is empty.  Please fill it in.");
             }
-            */
-
 
         }
 
