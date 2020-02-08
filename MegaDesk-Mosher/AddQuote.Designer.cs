@@ -90,7 +90,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(347, 323);
+            this.groupBox1.Size = new System.Drawing.Size(347, 313);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Information";
@@ -100,7 +100,7 @@
             this.matRequired.BackColor = System.Drawing.Color.LightSteelBlue;
             this.matRequired.Font = new System.Drawing.Font("Nirmala UI", 6.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.matRequired.ForeColor = System.Drawing.Color.Crimson;
-            this.matRequired.Location = new System.Drawing.Point(111, 198);
+            this.matRequired.Location = new System.Drawing.Point(111, 187);
             this.matRequired.Name = "matRequired";
             this.matRequired.Size = new System.Drawing.Size(63, 18);
             this.matRequired.TabIndex = 35;
@@ -116,7 +116,7 @@
             "Rosewood",
             "Veneer",
             "Pine"});
-            this.materialBox.Location = new System.Drawing.Point(178, 193);
+            this.materialBox.Location = new System.Drawing.Point(178, 182);
             this.materialBox.Name = "materialBox";
             this.materialBox.Size = new System.Drawing.Size(121, 29);
             this.materialBox.TabIndex = 6;
@@ -145,7 +145,7 @@
             // 
             this.RushRadioSeven.AutoSize = true;
             this.RushRadioSeven.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.RushRadioSeven.Location = new System.Drawing.Point(178, 272);
+            this.RushRadioSeven.Location = new System.Drawing.Point(178, 261);
             this.RushRadioSeven.Name = "RushRadioSeven";
             this.RushRadioSeven.Size = new System.Drawing.Size(59, 19);
             this.RushRadioSeven.TabIndex = 9;
@@ -157,7 +157,7 @@
             // 
             this.RushRadioFive.AutoSize = true;
             this.RushRadioFive.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.RushRadioFive.Location = new System.Drawing.Point(178, 252);
+            this.RushRadioFive.Location = new System.Drawing.Point(178, 241);
             this.RushRadioFive.Name = "RushRadioFive";
             this.RushRadioFive.Size = new System.Drawing.Size(59, 19);
             this.RushRadioFive.TabIndex = 8;
@@ -169,7 +169,7 @@
             // 
             this.RushRadioThree.AutoSize = true;
             this.RushRadioThree.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.RushRadioThree.Location = new System.Drawing.Point(178, 231);
+            this.RushRadioThree.Location = new System.Drawing.Point(178, 220);
             this.RushRadioThree.Name = "RushRadioThree";
             this.RushRadioThree.Size = new System.Drawing.Size(59, 19);
             this.RushRadioThree.TabIndex = 7;
@@ -181,7 +181,7 @@
             // 
             this.RushRadioNone.AutoSize = true;
             this.RushRadioNone.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.RushRadioNone.Location = new System.Drawing.Point(178, 291);
+            this.RushRadioNone.Location = new System.Drawing.Point(178, 280);
             this.RushRadioNone.Name = "RushRadioNone";
             this.RushRadioNone.Size = new System.Drawing.Size(105, 19);
             this.RushRadioNone.TabIndex = 10;
@@ -193,7 +193,7 @@
             // 
             this.RushOrderLabel.AutoSize = true;
             this.RushOrderLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RushOrderLabel.Location = new System.Drawing.Point(18, 225);
+            this.RushOrderLabel.Location = new System.Drawing.Point(18, 214);
             this.RushOrderLabel.Name = "RushOrderLabel";
             this.RushOrderLabel.Size = new System.Drawing.Size(111, 15);
             this.RushOrderLabel.TabIndex = 28;
@@ -203,7 +203,7 @@
             // 
             this.SurfaceMaterialLabel.AutoSize = true;
             this.SurfaceMaterialLabel.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SurfaceMaterialLabel.Location = new System.Drawing.Point(18, 196);
+            this.SurfaceMaterialLabel.Location = new System.Drawing.Point(18, 185);
             this.SurfaceMaterialLabel.Name = "SurfaceMaterialLabel";
             this.SurfaceMaterialLabel.Size = new System.Drawing.Size(92, 15);
             this.SurfaceMaterialLabel.TabIndex = 26;
