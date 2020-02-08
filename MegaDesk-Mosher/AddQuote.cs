@@ -129,11 +129,7 @@ namespace MegaDesk_Mosher
         }
 
         private void GenerateQuote(object sender, EventArgs e)
-        {
-
-
-            //Check if the material drop down has a value -TS
-            if (materialBox.Text == "")
+        {         
 
             // Validate First name field
             if (string.IsNullOrWhiteSpace(CustomerNameInputBox.Text))
@@ -165,13 +161,12 @@ namespace MegaDesk_Mosher
                 MessageBox.Show("Error.  Number of Drawers is Empty");
             }
 
-            //set Rush Day to Value
-            if (RushRadioNone.Checked)
-
+            //Check if the material drop down has a value -TS
+            if (materialBox.Text == "")
             {
-                // Validation message. 
-                errorProvider1.SetError(materialBox, "Material Selection Required.");
-                matRequired.Text = " -Required";
+            // Validation message. 
+            errorProvider1.SetError(materialBox, "Material Selection Required.");
+            matRequired.Text = " -Required";
 
             }
 
@@ -432,6 +427,11 @@ namespace MegaDesk_Mosher
                 MessageBox.Show("Last name cannot include special characters or numbers.");
                 LastNameInputBox.Text = "";
             }
+        }
+
+        private void CustomerNameInputBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
