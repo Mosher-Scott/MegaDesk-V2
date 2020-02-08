@@ -88,12 +88,12 @@ namespace MegaDesk_Mosher
         //TODO: figure out file
         public int[,] GetRushOrder()
         {
+            int[,] rushOrderGrid = new int[3, 3];
             try
             {
                 string path = RUSHORDERPRICEFILE;
                 string[] orderPrices = File.ReadAllLines(path);
-                int[,] rushOrderGrid = new int[3, 3];
-
+               
                 //outer loop for rows, inner for columns
                 int x = 0;
                 int i;
@@ -116,9 +116,9 @@ namespace MegaDesk_Mosher
             {
 
                 MessageBox.Show("Error. File containing rush order prices not found.");
-                throw;
+          
             }
-
+            return rushOrderGrid;
         }
 
     }
