@@ -102,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(474, 387);
+            this.ClientSize = new System.Drawing.Size(599, 399);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CloseFormButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
