@@ -195,7 +195,12 @@ namespace MegaDesk_Mosher
             }
             */
 
+            //Lanch Add Quote Form
+            viewDisplayQuoteForm.Tag = this;
+            viewDisplayQuoteForm.Show(this);
 
+            // Now close this window
+            Hide();
         }
 
         private void validateDeskWidthInput(object sender, CancelEventArgs e)
