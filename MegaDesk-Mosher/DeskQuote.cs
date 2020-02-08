@@ -29,6 +29,12 @@ namespace MegaDesk_Mosher
 
         // Create an empty list to hold all of the DeskQuotes
         public static List<DeskQuote> listOfQuotes = new List<DeskQuote>();
+        public static List<DeskQuote> MaterialQuotes = new List<DeskQuote>();
+        private string fName;
+        private string lName;
+        private string qTotal;
+        private string qMaterial;
+        private string sDate;
 
         // Default constructor
         public DeskQuote() { }
@@ -45,6 +51,14 @@ namespace MegaDesk_Mosher
             userDesk = quoteDesk;
         }
 
+        public DeskQuote(string fName, string lName, double qTotal, string qMaterial, string sDate)
+        {
+            clientFirstName = fName;
+            clientLastName = lName;
+            quoteTotal = qTotal;
+            Material = qMaterial;
+            submitDate = sDate;
+        }
         // This will read values from the savedQuotes file into the list listOfQuotes
         public static void readSavedQuotesFiles()
         {

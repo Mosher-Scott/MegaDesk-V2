@@ -206,37 +206,28 @@ namespace MegaDesk_Mosher
             try
             {
 
-                string clientFirstName = CustomerNameInputBox.Text;
-                string clientLastName = LastNameInputBox.Text;
-                double width = double.Parse(DeskWidthInputBox.Text);
-                double depth = double.Parse(DeskDepthtInputBox.Text);
-                int drawers = int.Parse(NumberOfDrawersInputBox.Text);
+                    string clientFirstName = CustomerNameInputBox.Text;
+                    string clientLastName = LastNameInputBox.Text;
+                    double width = double.Parse(DeskWidthInputBox.Text);
+                    double depth = double.Parse(DeskDepthtInputBox.Text);
+                    int drawers = int.Parse(NumberOfDrawersInputBox.Text);
+                    string material = materialBox.Text;
+                    //Old Surface Material Textbox:
+                    //string material = SurfaceMaterialInputBox.Text;
+                    //int rushOrderOption = int.Parse(RushOrderInputBox.Text);
 
-                string material = materialBox.Text;
-                //Old Surface Material Textbox:
-                //string material = SurfaceMaterialInputBox.Text;
-                //int rushOrderOption = int.Parse(RushOrderInputBox.Text);
+                    // Scott - I don't think we need to create a Desk object here.  With the way I've currently written the code, I create a desk object on the DisplayQuotes form
+                    // Desk myDesk = new Desk(width, depth, drawers, material, rushOrderOption);
 
-                // Scott - I don't think we need to create a Desk object here.  With the way I've currently written the code, I create a desk object on the DisplayQuotes form
-                // Desk myDesk = new Desk(width, depth, drawers, material, rushOrderOption);
+                    DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
 
-                DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
+                    // Now go back to the View Quote form
+                    viewDisplayQuoteForm.Tag = this;
+                    viewDisplayQuoteForm.Show(this);
 
-                // Now go back to the View Quote form
-                viewDisplayQuoteForm.Tag = this;
-                viewDisplayQuoteForm.Show(this);
-
-                string material = SurfaceMaterialInputBox.Text;
-
-                DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
-
-                //Lanch Add Quote Form
-                viewDisplayQuoteForm.Tag = this;
-                viewDisplayQuoteForm.Show(this);
-
-                // Now close this window
-                Hide();
-            } catch (Exception)
+                    // Now close this window
+                    Hide();
+                } catch (Exception)
             {
                 MessageBox.Show("One or more of the fields is empty.  Please fill it in.");
             }
