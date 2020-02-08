@@ -17,6 +17,9 @@ namespace MegaDesk_Mosher
             InitializeComponent();
             // Read the savedquotes file on program load. 
             DeskQuote.readSavedQuotesFiles();
+
+            // Check if the rushOrderPrices.txt file exists
+            DeskQuote.checkIfRushorderPriceExists();
         }
 
         private void ViewAddQuote_Click(object sender, EventArgs e)

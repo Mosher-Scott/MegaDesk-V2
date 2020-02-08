@@ -93,15 +93,18 @@ namespace MegaDesk_Mosher
 
         }
 
-        // Button for saving the quote to a JSON file
-        private void SaveQuoteButton_Click(object sender, EventArgs e)
+        private void SaveQuote()
         {
             // test
             DateTime currentDate = DateTime.Now;
 
             // Create a quote object
+
             // TODO: Change my name into the variables.  Hardcoded for testing
             DeskQuote quoteInfo = new DeskQuote(quoteFirstName, quoteLastName, currentDate.ToString("MM/dd/yyyy H:mm tt"), userDesk.getTotalCost(), quoteMaterial, userDesk);
+
+            DeskQuote quoteInfo = new DeskQuote(quoteFirstName, quoteLastName, currentDate.ToString("MM/dd/yyyy H:mm tt"), userDesk.getTotalCost(), userDesk);
+
 
             // Add the quote to a list of quotes
             DeskQuote.listOfQuotes.Add(quoteInfo);
@@ -110,8 +113,14 @@ namespace MegaDesk_Mosher
             quoteInfo.convertListToJson();
 
             MessageBox.Show("Quote Saved");
+        }
 
-            // TODO:  Where should the tool go once a quote is saved?
+        // Button for saving the quote to a JSON file
+        private void SaveQuoteButton_Click(object sender, EventArgs e)
+        {
+
+            SaveQuote();
+
             MainMenu mainMenuForm = new MainMenu();
 
             mainMenuForm.Show();
@@ -119,8 +128,23 @@ namespace MegaDesk_Mosher
             Close();
         }
 
+
         private void SurfaceValue_Click(object sender, EventArgs e)
         {
+        
+        }
+
+        private void SaveAndNewButton_Click(object sender, EventArgs e)
+        {
+            SaveQuote();
+
+            AddQuote addQuoteForm = new AddQuote();
+            addQuoteForm.Show();
+
+            // Close the window
+            this.Close();
+
+
 
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.AddNewQuoteButton = new System.Windows.Forms.Button();
             this.ViewQuotesButton = new System.Windows.Forms.Button();
             this.SearchQuotesButton = new System.Windows.Forms.Button();
@@ -36,7 +37,7 @@
             // 
             // AddNewQuoteButton
             // 
-            this.AddNewQuoteButton.Location = new System.Drawing.Point(35, 60);
+            this.AddNewQuoteButton.Location = new System.Drawing.Point(32, 78);
             this.AddNewQuoteButton.Name = "AddNewQuoteButton";
             this.AddNewQuoteButton.Size = new System.Drawing.Size(111, 38);
             this.AddNewQuoteButton.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // ViewQuotesButton
             // 
-            this.ViewQuotesButton.Location = new System.Drawing.Point(35, 104);
+            this.ViewQuotesButton.Location = new System.Drawing.Point(32, 122);
             this.ViewQuotesButton.Name = "ViewQuotesButton";
             this.ViewQuotesButton.Size = new System.Drawing.Size(111, 38);
             this.ViewQuotesButton.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // SearchQuotesButton
             // 
-            this.SearchQuotesButton.Location = new System.Drawing.Point(35, 148);
+            this.SearchQuotesButton.Location = new System.Drawing.Point(32, 166);
             this.SearchQuotesButton.Name = "SearchQuotesButton";
             this.SearchQuotesButton.Size = new System.Drawing.Size(111, 38);
             this.SearchQuotesButton.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 192);
+            this.button1.Location = new System.Drawing.Point(32, 210);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 38);
             this.button1.TabIndex = 3;
@@ -79,11 +80,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(342, 302);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(599, 399);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.SearchQuotesButton);
             this.Controls.Add(this.ViewQuotesButton);
             this.Controls.Add(this.AddNewQuoteButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MegaDesk";

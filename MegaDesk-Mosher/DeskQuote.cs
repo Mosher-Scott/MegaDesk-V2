@@ -21,14 +21,13 @@ namespace MegaDesk_Mosher
         //Adding Additional Fields for Material Search
         public string Material { get; set; }
 
-        // TODO:  Change this from a txt file to json file
         public const string SAVEDQUOTEFILE = "savedQuotes.json";  // Since this won't change
+        public const string RUSHORDERPRICEFILE = "rushOrderPrices.txt";
 
         // Create an empty desk object to be used
         public Desk userDesk;
 
         // Create an empty list to hold all of the DeskQuotes
-        // TODO:  Add a method to read from the saved quote file and populate this list when program starts
         public static List<DeskQuote> listOfQuotes = new List<DeskQuote>();
 
         // Default constructor
@@ -60,6 +59,20 @@ namespace MegaDesk_Mosher
 
         }
 
+        // Checks if the rushorderprice file exists or not.  If it doesn't, then this will create it.
+        public static void checkIfRushorderPriceExists()
+        {
+            if (!File.Exists(RUSHORDERPRICEFILE))
+            {
+                string prices = "60\n70\n80\n40\n50\n60\n30\n35\n40";
+
+                using (StreamWriter textFile = new StreamWriter(RUSHORDERPRICEFILE, false))
+                {
+                    textFile.WriteLine(prices);
+                }
+            }
+        }
+
         public void convertListToJson()
         {
             // Convert the object to a json string, indented
@@ -79,12 +92,12 @@ namespace MegaDesk_Mosher
         //TODO: figure out file
         public int[,] GetRushOrder()
         {
+            int[,] rushOrderGrid = new int[3, 3];
             try
             {
-                string path = @"c:..\..\rushOrderPrices.txt";
+                string path = RUSHORDERPRICEFILE;
                 string[] orderPrices = File.ReadAllLines(path);
-                int[,] rushOrderGrid = new int[3, 3];
-
+               
                 //outer loop for rows, inner for columns
                 int x = 0;
                 int i;
@@ -107,9 +120,9 @@ namespace MegaDesk_Mosher
             {
 
                 MessageBox.Show("Error. File containing rush order prices not found.");
-                throw;
+          
             }
-
+            return rushOrderGrid;
         }
 
     }

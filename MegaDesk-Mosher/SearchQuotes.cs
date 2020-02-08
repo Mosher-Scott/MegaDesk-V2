@@ -42,6 +42,7 @@ namespace MegaDesk_Mosher
             Close();
         }
 
+
         private void materialBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             tester3.Text = "";
@@ -97,14 +98,17 @@ namespace MegaDesk_Mosher
             
         }
 
+
         private void SearchQuotes_Load(object sender, EventArgs e)
         {
 
         }
 
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
     }
 }

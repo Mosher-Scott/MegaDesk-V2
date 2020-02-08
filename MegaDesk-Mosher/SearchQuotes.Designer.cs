@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.components = new System.ComponentModel.Container();
+
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchQuotes));
+
             this.CloseFormButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.materialBox = new System.Windows.Forms.ComboBox();
@@ -50,7 +54,11 @@
             // 
             // CloseFormButton
             // 
+
             this.CloseFormButton.Location = new System.Drawing.Point(12, 371);
+
+            this.CloseFormButton.Location = new System.Drawing.Point(12, 350);
+
             this.CloseFormButton.Name = "CloseFormButton";
             this.CloseFormButton.Size = new System.Drawing.Size(111, 35);
             this.CloseFormButton.TabIndex = 2;
@@ -157,20 +165,29 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+
             this.ClientSize = new System.Drawing.Size(800, 418);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tester3);
             this.Controls.Add(this.materialBox);
             this.Controls.Add(this.label1);
+
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(599, 399);
+
             this.Controls.Add(this.CloseFormButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SearchQuotes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search Quotes";
             this.Load += new System.EventHandler(this.SearchQuotes_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deskQuoteBindingSource1)).EndInit();
+
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

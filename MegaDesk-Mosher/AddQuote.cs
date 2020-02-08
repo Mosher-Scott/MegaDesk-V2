@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -129,8 +131,43 @@ namespace MegaDesk_Mosher
         private void GenerateQuote(object sender, EventArgs e)
         {
 
+
             //Check if the material drop down has a value -TS
             if (materialBox.Text == "")
+
+            // Validate First name field
+            if (string.IsNullOrWhiteSpace(CustomerNameInputBox.Text))
+            {
+                MessageBox.Show("Error.  First name is Empty");
+            }
+
+            // Validate Last Name Field
+            if (string.IsNullOrWhiteSpace(CustomerNameInputBox.Text))
+            {
+                MessageBox.Show("Error.  Last name is Empty");
+            }
+
+            // Validate width Field
+            if (string.IsNullOrWhiteSpace(DeskWidthInputBox.Text))
+            {
+                MessageBox.Show("Error.  Width is Empty");
+            }
+
+            // Validate depth Field
+            if (string.IsNullOrWhiteSpace(DeskDepthtInputBox.Text))
+            {
+                MessageBox.Show("Error.  Depth is Empty");
+            }
+
+            // Validate depth Field
+            if (string.IsNullOrWhiteSpace(NumberOfDrawersInputBox.Text))
+            {
+                MessageBox.Show("Error.  Number of Drawers is Empty");
+            }
+
+            //set Rush Day to Value
+            if (RushRadioNone.Checked)
+
             {
                 // Validation message. 
                 errorProvider1.SetError(materialBox, "Material Selection Required.");
@@ -141,6 +178,7 @@ namespace MegaDesk_Mosher
             else
             {
                 int rushOrderOption;
+
 
                 //set Rush Day to Value
                 if (RushRadioNone.Checked)
@@ -164,12 +202,16 @@ namespace MegaDesk_Mosher
                     rushOrderOption = 0;
                 }
 
-                //  TODO: Validate all fields before sending the data so someone can't submit empty/invalid data
+            // Try block will try to get the data & send it.  Everything will fail if a field is null
+            try
+            {
+
                 string clientFirstName = CustomerNameInputBox.Text;
                 string clientLastName = LastNameInputBox.Text;
                 double width = double.Parse(DeskWidthInputBox.Text);
                 double depth = double.Parse(DeskDepthtInputBox.Text);
                 int drawers = int.Parse(NumberOfDrawersInputBox.Text);
+
                 string material = materialBox.Text;
                 //Old Surface Material Textbox:
                 //string material = SurfaceMaterialInputBox.Text;
@@ -184,12 +226,28 @@ namespace MegaDesk_Mosher
                 viewDisplayQuoteForm.Tag = this;
                 viewDisplayQuoteForm.Show(this);
 
+                string material = SurfaceMaterialInputBox.Text;
+
+                DisplayQuoteInfo viewDisplayQuoteForm = new DisplayQuoteInfo(clientFirstName, clientLastName, width, depth, drawers, material, rushOrderOption);
+
+                //Lanch Add Quote Form
+                viewDisplayQuoteForm.Tag = this;
+                viewDisplayQuoteForm.Show(this);
+
+                // Now close this window
+                Hide();
+            } catch (Exception)
+            {
+                MessageBox.Show("One or more of the fields is empty.  Please fill it in.");
+            }
+
+
                 // Now close this window
                 Hide();
             }
         }
 
-       private void validateDeskWidthInput(object sender, CancelEventArgs e)
+        private void validateDeskWidthInput(object sender, CancelEventArgs e)
         {
 
             //  Get the width input.  If not a number, throw an exception
@@ -319,6 +377,7 @@ namespace MegaDesk_Mosher
         }
 
 
+
         private void matValue_Click(object sender, EventArgs e)
         {
 
@@ -365,5 +424,23 @@ namespace MegaDesk_Mosher
         //    }
         //}
 
+        private void CustomerNameInputBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Regex.IsMatch(CustomerNameInputBox.Text, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("First name cannot include special characters or numbers.");
+                CustomerNameInputBox.Text = "";
+            }
+        }
+
+
+        private void LastNameInputBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(LastNameInputBox.Text, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("Last name cannot include special characters or numbers.");
+                LastNameInputBox.Text = "";
+            }
+        }
     }
 }
