@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -335,38 +336,22 @@ namespace MegaDesk_Mosher
             return valid;
         }
 
+        private void CustomerNameInputBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Regex.IsMatch(CustomerNameInputBox.Text, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("First name cannot include special characters or numbers.");
+                CustomerNameInputBox.Text = "";
+            }
+        }
 
-        //private void validateRushoptionInput(object sender, CancelEventArgs e)
-        //{
-        //    try
-        //    {
-        //        int rushOption = int.Parse(RushOrderInputBox.Text);
-
-
-        //        // While the validation fails, change the text color
-        //        if (rushOption == 3 || rushOption == 5 || rushOption == 7 || rushOption == 14)
-        //        {
-
-        //        } else
-        //        {
-        //            RushOrderInputBox.ForeColor = Color.Black;
-        //            RushOrderInputBox.BackColor = Color.Red;
-        //            RushOrderInputBox.Focus();
-        //            MessageBox.Show($"Valid days are 3, 5, 7, or 14.  You entered {rushOption}");
-        //        }
-
-
-        //        RushOrderInputBox.ForeColor = Color.Black;
-        //        RushOrderInputBox.BackColor = Color.White;
-
-        //    }
-        //    catch (FormatException)
-        //    {
-        //        MessageBox.Show("Please enter a number for the Number of Drawers");
-        //        RushOrderInputBox.ForeColor = Color.Red;
-        //        RushOrderInputBox.Focus();
-        //    }
-        //}
-
+        private void LastNameInputBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(LastNameInputBox.Text, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("Last name cannot include special characters or numbers.");
+                LastNameInputBox.Text = "";
+            }
+        }
     }
 }
