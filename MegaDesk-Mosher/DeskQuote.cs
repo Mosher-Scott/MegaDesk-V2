@@ -19,6 +19,7 @@ namespace MegaDesk_Mosher
         public double quoteTotal { get; set; }
         // TODO:  Change this from a txt file to json file
         public const string SAVEDQUOTEFILE = "savedQuotes.json";  // Since this won't change
+        public const string RUSHORDERPRICEFILE = "rushOrderPrices.txt";
 
         // Create an empty desk object to be used
         public Desk userDesk;
@@ -55,6 +56,20 @@ namespace MegaDesk_Mosher
 
         }
 
+        // Checks if the rushorderprice file exists or not.  If it doesn't, then this will create it.
+        public static void checkIfRushorderPriceExists()
+        {
+            if (!File.Exists(RUSHORDERPRICEFILE))
+            {
+                string prices = "60\n70\n80\n40\n50\n60\n30\n35\n40";
+
+                using (StreamWriter textFile = new StreamWriter(RUSHORDERPRICEFILE, false))
+                {
+                    textFile.WriteLine(prices);
+                }
+            }
+        }
+
         public void convertListToJson()
         {
             // Convert the object to a json string, indented
@@ -76,7 +91,7 @@ namespace MegaDesk_Mosher
         {
             try
             {
-                string path = @"c:..\..\rushOrderPrices.txt";
+                string path = RUSHORDERPRICEFILE;
                 string[] orderPrices = File.ReadAllLines(path);
                 int[,] rushOrderGrid = new int[3, 3];
 
