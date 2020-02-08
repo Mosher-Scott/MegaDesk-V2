@@ -99,7 +99,6 @@ namespace MegaDesk_Mosher
             DateTime currentDate = DateTime.Now;
 
             // Create a quote object
-            // TODO: Change my name into the variables.  Hardcoded for testing
             DeskQuote quoteInfo = new DeskQuote(quoteFirstName, quoteLastName, currentDate.ToString("MM/dd/yyyy H:mm tt"), userDesk.getTotalCost(), userDesk);
 
             // Add the quote to a list of quotes
@@ -117,7 +116,6 @@ namespace MegaDesk_Mosher
 
             SaveQuote();
 
-            // TODO:  Where should the tool go once a quote is saved?
             MainMenu mainMenuForm = new MainMenu();
 
             mainMenuForm.Show();

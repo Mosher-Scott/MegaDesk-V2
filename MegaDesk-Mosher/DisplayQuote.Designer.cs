@@ -217,7 +217,7 @@
             // 
             // SaveQuoteButton
             // 
-            this.SaveQuoteButton.Location = new System.Drawing.Point(240, 254);
+            this.SaveQuoteButton.Location = new System.Drawing.Point(243, 349);
             this.SaveQuoteButton.Name = "SaveQuoteButton";
             this.SaveQuoteButton.Size = new System.Drawing.Size(111, 38);
             this.SaveQuoteButton.TabIndex = 20;
@@ -227,7 +227,7 @@
             // 
             // ReturnToAddQuoteScreenLabel
             // 
-            this.ReturnToAddQuoteScreenLabel.Location = new System.Drawing.Point(6, 254);
+            this.ReturnToAddQuoteScreenLabel.Location = new System.Drawing.Point(9, 349);
             this.ReturnToAddQuoteScreenLabel.Name = "ReturnToAddQuoteScreenLabel";
             this.ReturnToAddQuoteScreenLabel.Size = new System.Drawing.Size(111, 38);
             this.ReturnToAddQuoteScreenLabel.TabIndex = 21;
@@ -368,7 +368,7 @@
             // 
             // SaveAndNewButton
             // 
-            this.SaveAndNewButton.Location = new System.Drawing.Point(123, 254);
+            this.SaveAndNewButton.Location = new System.Drawing.Point(126, 349);
             this.SaveAndNewButton.Name = "SaveAndNewButton";
             this.SaveAndNewButton.Size = new System.Drawing.Size(111, 38);
             this.SaveAndNewButton.TabIndex = 24;
@@ -382,7 +382,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(371, 304);
+            this.ClientSize = new System.Drawing.Size(599, 399);
             this.Controls.Add(this.SaveAndNewButton);
             this.Controls.Add(this.OrderInfoLabel);
             this.Controls.Add(this.DeskInfoBox);

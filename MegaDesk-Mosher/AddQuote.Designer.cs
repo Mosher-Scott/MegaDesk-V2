@@ -54,7 +54,7 @@
             // 
             // CloseFormButton
             // 
-            this.CloseFormButton.Location = new System.Drawing.Point(229, 352);
+            this.CloseFormButton.Location = new System.Drawing.Point(12, 352);
             this.CloseFormButton.Name = "CloseFormButton";
             this.CloseFormButton.Size = new System.Drawing.Size(111, 38);
             this.CloseFormButton.TabIndex = 12;
@@ -269,7 +269,7 @@
             // GenerateQuoteButton
             // 
             this.GenerateQuoteButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.GenerateQuoteButton.Location = new System.Drawing.Point(112, 352);
+            this.GenerateQuoteButton.Location = new System.Drawing.Point(129, 352);
             this.GenerateQuoteButton.Name = "GenerateQuoteButton";
             this.GenerateQuoteButton.Size = new System.Drawing.Size(111, 38);
             this.GenerateQuoteButton.TabIndex = 11;
@@ -283,7 +283,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(350, 403);
+            this.ClientSize = new System.Drawing.Size(599, 399);
             this.Controls.Add(this.GenerateQuoteButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CloseFormButton);

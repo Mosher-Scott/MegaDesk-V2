@@ -17,7 +17,7 @@ namespace MegaDesk_Mosher
         public string clientLastName { get; set; }
         public string submitDate { get; set; }
         public double quoteTotal { get; set; }
-        // TODO:  Change this from a txt file to json file
+
         public const string SAVEDQUOTEFILE = "savedQuotes.json";  // Since this won't change
         public const string RUSHORDERPRICEFILE = "rushOrderPrices.txt";
 
@@ -25,7 +25,6 @@ namespace MegaDesk_Mosher
         public Desk userDesk;
 
         // Create an empty list to hold all of the DeskQuotes
-        // TODO:  Add a method to read from the saved quote file and populate this list when program starts
         public static List<DeskQuote> listOfQuotes = new List<DeskQuote>();
 
         // Default constructor
