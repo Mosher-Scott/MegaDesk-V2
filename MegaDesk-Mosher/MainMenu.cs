@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDesk_Mosher
@@ -22,6 +15,7 @@ namespace MegaDesk_Mosher
             DeskQuote.checkIfRushorderPriceExists();
         }
 
+        // Code for when the user wants to add a quote
         private void ViewAddQuote_Click(object sender, EventArgs e)
         {
             AddQuote viewAddQuoteWindow = new AddQuote();
@@ -34,6 +28,7 @@ namespace MegaDesk_Mosher
 
         }
 
+        // Button for opening the form for searching for a quote
         private void SearchQuotesButton_Click(object sender, EventArgs e)
         {
             SearchQuotes viewSearchQuoteWindow = new SearchQuotes();
@@ -45,6 +40,7 @@ namespace MegaDesk_Mosher
             Hide();
         }
 
+        // Button for when the user wants to view all quotes
         private void ViewQuotesButton_Click(object sender, EventArgs e)
         {
             ViewAllQuotes viewAllQuotesWindow = new ViewAllQuotes();
@@ -56,6 +52,7 @@ namespace MegaDesk_Mosher
             Hide();
         }
 
+        // Button for exiting the program
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Are you sure you want to exit?");

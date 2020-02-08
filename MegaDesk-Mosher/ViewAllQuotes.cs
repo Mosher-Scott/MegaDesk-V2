@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.IO;
-
 
 namespace MegaDesk_Mosher
 {
@@ -27,12 +16,9 @@ namespace MegaDesk_Mosher
             }
 
             dataGridView1.DataSource = DeskQuote.listOfQuotes;
-
-            // This will load quotes from the list while the program is running
-            //var list = new BindingList<DeskQuote>(DeskQuote.listOfQuotes);
         }
 
-
+        // Button for closing the form
         private void CloseFormButton_Click(object sender, EventArgs e)
         {
 

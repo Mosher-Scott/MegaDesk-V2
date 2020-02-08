@@ -1,11 +1,4 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
 namespace MegaDesk_Mosher
 {
     class Desk
@@ -107,16 +100,7 @@ namespace MegaDesk_Mosher
         }
 
         //Access DeskQuote to obtain rushOrder
-        DeskQuote newQuote = new DeskQuote(quoteFirstName, quoteLastName, quoteDate, deskQuoteTotal, quoteMaterial, quoteDesk);
-        //TODO: Figure out how to not include these but grab method from DeskQuote. Maybe
-        // move getRushOrderPrice() to DeskQuote?
-        
-        private static string quoteFirstName;
-        private static string quoteLastName;
-        private static string quoteDate;
-        private static double deskQuoteTotal;
-        private static string quoteMaterial;
-        private static Desk quoteDesk;
+        DeskQuote newQuote = new DeskQuote();
 
         // Gets the rush order options based on desk size
         public double getRushOrderPrice()
@@ -176,6 +160,7 @@ namespace MegaDesk_Mosher
             return price;
         }
 
+        // Returns the total cost of the desk + wanted options
         public double getTotalCost()
         {
             return Desk.BASEPRICE + this.getSurfaceAreaCost() + this.getDrawerCost() + this.getSurfaceMaterialCost() + this.getRushOrderPrice();

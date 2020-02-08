@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDesk_Mosher
@@ -16,8 +11,6 @@ namespace MegaDesk_Mosher
         public SearchQuotes()
         {
             InitializeComponent();
-
-
 
             // If there are no quotes to load, display a message to the user letting them know
             if (DeskQuote.listOfQuotes.Count == 0)
@@ -30,7 +23,7 @@ namespace MegaDesk_Mosher
 
         }
 
-
+        // What to do when the user clicks the button to go back to the Main menu
         private void CloseFormButton_Click(object sender, EventArgs e)
         {
 
@@ -41,6 +34,7 @@ namespace MegaDesk_Mosher
             Close();
         }
 
+        // Code to be run when the user selects a material from the dropdown box
         private void materialBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             BindingSource source = new BindingSource();
@@ -69,11 +63,12 @@ namespace MegaDesk_Mosher
 
             }
             // Create a BindingSource, and attach the list to it.  Then it will refresh each time you click this button
-
             source.DataSource = DeskQuote.MaterialQuotes;
             dataGridView1.DataSource = source;
         }
 
+        // Empty methods
+        #region
         private void test2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -113,5 +108,6 @@ namespace MegaDesk_Mosher
         {
 
         }
+        #endregion
     }
 }
