@@ -276,6 +276,7 @@
             this.CustomerNameInputBox.Name = "CustomerNameInputBox";
             this.CustomerNameInputBox.Size = new System.Drawing.Size(102, 23);
             this.CustomerNameInputBox.TabIndex = 0;
+            this.CustomerNameInputBox.TextChanged += new System.EventHandler(this.CustomerNameInputBox_TextChanged);
             this.CustomerNameInputBox.Validating += new System.ComponentModel.CancelEventHandler(this.CustomerNameInputBox_Validating);
             // 
             // CustomerNameLabel
